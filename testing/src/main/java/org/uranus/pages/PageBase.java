@@ -82,5 +82,10 @@ public class PageBase {
         select.selectByValue(value);
     }
 
+    public void waitForToastToDisappear() {
+        By toastLocator = By.cssSelector("div[role='alert'].p-toast-message-content");
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(toastLocator));
+    }
 
 }

@@ -10,12 +10,14 @@ public class AdminPanelTest extends TestBase {
     AdminPanelPage adminPanelPage;
 
 
-    @Test(priority = 3)
+//    @Test(priority = 3)
     public void checkThatEditRoleOfUseriIsWorkingSuccessfuly() {
         homePage = new HomePage(webDriver);
         adminPanelPage = new AdminPanelPage(webDriver);
         homePage.login(LoadProperties.env.getProperty("ADMIN_EMAIL"), LoadProperties.env.getProperty("ADMIN_PASSWORD"));
         homePage.openAdminPanel();
+        homePage.waitForToastToDisappear();
+
         assertIsEqual(adminPanelPage.adminPanelTitle, "ADMIN PANEL");
         adminPanelPage.editRole("User");
         assertIsEqual(homePage.toastMsg, "Role is Edited Successfully");

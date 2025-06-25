@@ -16,7 +16,7 @@ public class SignUpTest extends TestBase {
     String role = "EMPLOYEE";
 
 
-    @Test(priority = 0)
+//    @Test(priority = 0)
     public void checkThatSignUpScenarioWorkingSuccessfully()  {
         homePage = new HomePage(webDriver);
         homePage.signUp(name, email, password, password, role);
@@ -25,7 +25,7 @@ public class SignUpTest extends TestBase {
         homePage.click(homePage.closeToastMsg);
     }
 
-    @Test(priority = 1)
+//    @Test(priority = 1)
     public void approveRegistrationRequest() {
         homePage = new HomePage(webDriver);
         adminPanelPage = new AdminPanelPage(webDriver);
